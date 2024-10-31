@@ -1,0 +1,34 @@
+body {
+	background-color:lightgray;
+	font-family: sans-serif;
+}
+
+h1 {
+	margin: 0;
+}
+
+#fromTable {
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: lightblue;
+	border: 5px solid grey;
+	border-radius: 20px;
+}
+
+#fromTable td, th {
+	width: 50%;
+	padding: 5px;
+}
+
+#fromTable th {
+	text-align: right;
+}
+
+#fromTable td {
+	text-align: left;
+}
+
+#startWorkerButton {
+	font-weight: bold;
+}

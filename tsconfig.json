@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "esNext",
+	"module": "esNext",
+	"outDir": "web/script",
+	"strict": true,
+	"sourceMap": true,
+	"skipLibCheck": true,
+  }
+}

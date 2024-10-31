@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Web Workers API example</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script/main.js" type="module"></script>
+</head>
+
+<body>
+	<table id="fromTable" tabindex="0">
+		<tr>
+			<td colspan="2">
+				<h1>Web Workers API example</h1>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<label for="number1Label">Number 1: </label>
+			</th>
+			<td>
+				<input id="number1Input" type="number" value="2" size="8">
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<label for="number2Label">Number 2: </label>
+			</th>
+			<td>
+				<input id="number2Input" type="number" value="3" size="8">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align: center;">
+				<button id="startWorkerButton">Start Worker</button>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<label for="resultLabel">Multiply result: </label>
+			</th>
+			<td>
+				<input id="resultInput" type="text" readonly  size="8">
+			</td>
+		</tr>
+		</td>
+	</table>
+</body>
+
+</html>
