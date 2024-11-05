@@ -1,6 +1,6 @@
 import { MyMessage } from "./message";
 
-export class MyApp
+export class App
 {
 	number1Input!: HTMLInputElement;
 	number2Input!: HTMLInputElement;
@@ -24,25 +24,27 @@ export class MyApp
 
 	onStartWorker()
 	{
-		if( ! window.Worker ) {
+		if( !window.Worker ) {
 			console.log( "App: Your browser doesn't support web workers." );
 			return;
 		}
 
-		const myWorker = new Worker( "script/worker.js" );
+		const myWorker = new Worker( "script/worker.js", { type: 'module' } );
 		myWorker.onmessage = ( event ) => this.onWorkerMessage( event );
 
 		const myMessage: MyMessage = {
 			number1: Number( this.number1Input.value ),
-		 	number2: Number( this.number2Input.value ) };
+			number2: Number( this.number2Input.value )
+		};
 
+		console.log( "App: Posting message posted to worker with nummbers: " +
+			myMessage.number1.toString() + ", " + myMessage.number2.toString() );
 		myWorker.postMessage( myMessage );
-		console.log( "App: Message posted to worker" );
 	}
 
 	onWorkerMessage( event: MessageEvent<any> )
 	{
-		console.log( "App: Message received from worker" );
+		console.log( "App: Message received from worker: " + event.data );
 		this.resultInput.value = event.data;
 	}
 

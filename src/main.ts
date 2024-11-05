@@ -1,4 +1,4 @@
-import { MyApp } from "./App.js"
+import { App } from "./App.js"
 
-new MyApp().start();
+new App().start();
 

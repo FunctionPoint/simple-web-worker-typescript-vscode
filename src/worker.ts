@@ -1,26 +1,18 @@
+import { MyMessage } from "./message.js";
+
 self.onmessage = messageEvent => new MyWorker().onMessage( messageEvent );
-
-// Cannot import here, must redefine the type
-// import { MyMessage } from "./message.js";
-
-type MyMessage =
-{
-	number1: number;
-	number2: number;
-}
 
 class MyWorker
 {
 	onMessage( messageEvent: MessageEvent<MyMessage> )
 	{
-		console.log( "Worker: Message received from main script" );
+		const number1 = messageEvent.data.number1;
+		const number2 = messageEvent.data.number2;
+		console.log( "Worker: Message received from main script with numbers: " +
+			number1.toString() + ", " + number2.toString() );
 
-		const result = messageEvent.data.number1 * messageEvent.data.number2;
-		if( isNaN( result ) ) {
-			postMessage( "Invalid input" );
-		} else {
-			console.log( "Worker: Posting message back to main script" );
-			postMessage( result.toString() );
-		}
+		const result = number1 * number2;
+		console.log( "Worker: Posting message back to main script: " + result.toString() );
+		postMessage( result );
 	}
 }

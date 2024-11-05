@@ -1,4 +1,4 @@
-# A Web Worker API example app
+# A Web Workers API example app
 For TypeScript devs using VSCode.
 
 It is based in this repo:
